@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<ul>
+  <li><a href="">home</a>
+  </li>
+</ul>
+
+  <script>
+    var gre;
+    gre = "안녕";
+    gre = '하이'; //주로사용
+    gre = `반갑`;
+
+    var exs = "그는 \"ㅁ\" >>>>>";
+    var exs = "그는 \"ㅁ\" >>>>>";
+
+/*
+탈출문자(escape seqimence) \n \t \" \'
+문자열 내에서 특정 명령 혹은 원하는 값처리
+*/
+
+
+var tag = '<ul>\n\t<li>\n\t\t<a href="">home</a>\n\t</li>\n</ul>';
+// 템플릿 리티럴: 백틱('')으로 문자열
+// 공백과 들여쓰기 줄 계행 등을 모두 문자열로 인정
+tag = `<ul>
+  <li><a href="">home</a>
+  </li>
+</ul>`;
+console.log(tag);
+console.log('----------------------------');
+var mon = 12;
+var day = 25;
+var ani = '크리스마스';
+//12/25일은 크리스마스
+//문자열 + 문자열 단순히 연결서 결합한 결과
+//문자열과 다른 데이터 타입간의 덧샘 연산은 전체 결과가 나옵니다
+console.log(mon + '월' + day + '일은' +ani + '입니다');
+//템플릿 리터럴을 용한
+console.log(`${mon}월 ${day}일은 ${ani}입니다`);
+  </script>
+</body>
+</html>
