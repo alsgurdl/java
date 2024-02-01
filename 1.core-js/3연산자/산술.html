@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var num = 3;
+console.log(27 / 5); //몫
+console.log(27 % 5); //나머지
+console.log(num ** 4); // es7 이후 출시되 거듭제곱 연산자
+console.log(Math.pow(num,4)); //es 이전 사용하던 거듭제곱 함수
+console.log("------------------------");
+//단항 산술 연산자 ++,--
+var x = 3;
+x++;
+
+console.log('x :' + x);
+//전위 후위 연산
+var a = 10;
+var resu;
+resu = a++; //후위 연산 선연산 후증가
+console.log(`reas: ${resu} a : ${a}` );
+  resu = ++a; //전위 연산 선증가 후연산
+  console.log('---------------------------------');
+  //대입연산자 복합 대입 연산자
+  var i = 9;
+  i += 3; //i = i+3
+i -=8 ; // 4
+i *= 10; // 40
+i /= 8;
+i %= 3;
+i **= 4;
+console.log('i: ' + i);
+</script>
+
+</body>
+</html>

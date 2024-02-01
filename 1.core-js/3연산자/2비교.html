@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /*
+== 연산자는 암묵적으로 문자열 내부에 숫자가 있다면
+자동으로 숫자로 변환한 후에 비교합니다
+===을 사용하면 타입까지 일치하는 지 비교합니다
+*/
+    var a = 5,
+      b = '5';
+    console.log(a == b);
+    console.log(a === b);
+    console.log('-------------------');
+    // 등등 비교는 결가 예측이 힘들기 때문에 조alt
+    console.log('0' == ''); //
+    console.log(0 == ''); //
+    console.log(0 == '0'); //
+    console.log(false == 'false'); //
+    console.log(false == '0'); //
+  //이리 비교 nan 주의
+  //nan은 자신과 일치하지 않는 유일한 값
+    console.log(Nan === Nan);// fales
+
+    //문자열의 비교
+    console.log('apple' === 'apple');
+  //문자열의 대소 비교
+  //유니코드 문자 번호를 기준으로 
+ // 유지코드 전네계의 문자를 지정
+ //같은 문자일 경우 사전 등재 순서로 판단
+  console.log('pea' < 'zebr');
+  console.log('pefasd' < 'Zebra');
+  </script>
+</body>
+
+</html>
