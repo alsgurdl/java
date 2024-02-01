@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+//48 ~ 15사이의 정수중 8 배수면 출력
+var n = 48;
+// while (n <= 150) {
+//   if(n % 8 === 0){
+//     console.log(n);
+//   }
+//   n++;
+// }
+while (n <= 150) {
+  console.log(n);
+   n += 8;
+}
+console.log('--------');
+var s = 1;
+var d = 0;
+
+// while (s <= 1000) {
+//   if(1000 % s === 0){
+//     d++;
+    
+//   }
+//    s++;
+// }
+// console.log(d); 
+/*
+         # 사용자에게 구구단 단수를 입력받아서
+         해당 단수의 구구단을 출력해 보세요.
+         ex)
+         
+         구구단을 입력하세요: 4
+         *** 구구단 4 단 ***
+         4 x 1 = 4
+         4 x 2 = 8
+         4 x 3 = 12
+         4 x 4 = 16 
+         .
+         .
+         .
+         4 x 9 = 36
+         */
+
+var a = +prompt(점수입력);
+var b = 1;
+console.log();
+while (b <= 9) {
+  
+  console.log(`${a} *${b} = ${a * b}`);
+  b++;
+}
+
+
+  </script>
+</body>
+</html>
