@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+/*
+논리 연산자 양쪽항의 온리값을 연산하여 새로운논리도출
+&&: 양쪽모두
+||: 둘중하나
+*/
+
+ var id = 'abc';
+ var pw = 'as123';
+// if(id === 'abc'){
+//   if(pw === 'as123');
+//   else{
+//     alert('틀림')
+//   }
+// }
+// else{
+//     alert('틀림')
+//   }
+
+if(id === 'abc' && pw === 'as123'){
+  alert('로그인');
+}
+else{
+    alert('틀림')
+  }
+console.log('---------');
+var mon = 0;
+// if(mon ===0 ){
+//   alert('집에서');
+// }
+// else{
+//   alert('나가');
+// }
+if(!mon){
+  alert('집에서');
+}else{
+  alert('나가서');
+}
+
+// 삼향 조건 연산자
+//조건식 ? '좌항' :'우항'
+//조건식의 결과가 true라면 좌향 false리면 우향
+console.log('-----------------');
+var sco = 50;
+var res = sco >= 70 ? '함격' : '불함격';
+console.log('결과' + res);
+
+  </script>
+
+</body>
+</html>
