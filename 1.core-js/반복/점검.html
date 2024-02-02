@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+// 1 ~ 100 사이의 랜덤한 숫자하나가 정답으로 주어진다.
+// 사용자는 이 사이의 숫자를 입력할 수 있어야 한다.
+// 시스템은 입력한 숫자를 판단하여 up인지 down인지 알려줘야 한다.
+// 만약 정답을 맞추지 못하면 지속해서 입력을 받고 결과를 알려준다.
+// 정답을 맞추면 맞췄다는 메시지와 함께 프로그램을 종료한다.
+
+// 사용자들은 입력 기회가 5번으로 제한된다.
+// 즉, 5번 안에 정답을 맞추지 못할 경우 게임이 강제종료된다.
+
+// 사용자는 게임 시작전에 난이도를 설정할 수 있다.
+// 난이도는 상, 중, 하 난이도가 존재하며
+// 난이도별 입력 횟수제한이 다르다.
+
+
+var a = +prompt('난이도는 1상, 2중, 3하');
+var b = 0;
+if(a===1){
+ b=3;
+}
+else if(a===2){
+  b=5;
+}
+else if(a===3){
+  b=10;
+}
+
+
+var nub = Math.floor(Math.random()*100)+1;
+var min = 1, max =l00;
+while (true) {
+  var c = +prompt(`숫자입력${min}에서 ${max}사이`);
+ 
+  if(c< min || c > max){
+    alert(`범위밖`);
+    continue;
+  }
+ 
+  if(c===nub){
+    alert(`정답 ${b - c}만에 정답`);
+    break;
+  }
+  
+  else if(c<nub){
+    alert('업');
+    b--;
+    
+    alert(`${c}에서 100사이`);
+  }
+  
+  else {
+    alert('다운');
+     b--;
+     
+  }
+  if(b === 0){
+    alert(`오답 정답은 ${nub}`);
+    break;
+    
+  }
+  
+}
+alert(`수고`);
+
+
+  </script>
+
+</body>
+</html>
