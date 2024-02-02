@@ -22,20 +22,26 @@
 var x = +prompt('첫번째 숫자를 입력하세요');
 var y = +prompt('두번째 숫자를 입력');
 var z = 0;
+var m = x;
 
-while (x<=y) {
-  if (x<=y) {
+if(x > y){
+  var n = y;
+y=x;
+x = y;
+}
+
+while (x<=y ) {
+ 
     z += x;
   
   x++;
-  }
- else {
-  alert('x에 큰 값이 들어와도 정상적으로 출력이 되었으면 좋겠습니다.');
- 
-}
+    }
   
-}
-console.log(`${x},${y} 합계 ${z}`);
+ 
+
+ 
+
+console.log(`${m} 부터 ${y} 합계 ${z}`);
 
   </script>
 </body>
