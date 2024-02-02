@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+    
+    */
+   var num = +prompt('정수 입력');
+   var cou = 0;
+   for(var i =1; i<=num; i++){
+    if(num % i === 0){
+  cou++; 
+}
+  }
+if(cou === 2){
+  console.log(`${num}은 소수`);
+
+}else{
+  console.log(`${num}은 소수가 아님`);
+}
+
+console.log('---------------------');
+for(var j = 2; num % j !== 0; j++ ){
+
+}
+console.log(`${num}은 ${num === j ? '소입니다': '소수입니다'}`);
+
+  </script>
+</body>
+</html>
