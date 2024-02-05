@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var ex = 10 + '20';
+    console.log('ex: ' + ex); //1020
+    var ex2 = 10 * '3'
+    console.log('ex2 ' + ex2); //30
+
+    ex2 = 100 + '';
+    console.log('ex2 ' + typeof ex2); //string
+    //문자열 타입의 암묵적 숫자 변환
+    var ex3 = +'550'; // number
+    ex3 = +'false'; // number -> nan 
+    // 논리 타입을 압묵적 숫자 변환
+    ex3 = +true; //1
+    ex3 = +false; //0
+
+    ex3 = +null;
+    ex = +NaN;
+
+    console.log(ex3);
+    console.log('ex3 ' + typeof ex3);
+
+    console.log('---------------------------');
+    //truthy falsy
+
+    //undefined, null 0 NaN '' dms ahen ㄹ민ㄷ
+    //나머지는 모두 true로 인식한다
+    //함수가 반환하는 값, 미동기 통신의 겨로가 값들이 정학하게 어떤 값인지 모르더라도
+    //해당 값이 따로 있는 노니적 평가에 따라 조건문을 좀 더 수월 하개
+    //구성할 수 있습니다. 
+    if ('') console.log('OK1'); //false
+    if ('hello') console.log('OK2'); //t
+    if (undefined) console.log('OK3'); //f
+    if (null) console.log('OK4');//f
+    if (350) console.log('OK5');//t
+    if (NaN) console.log('OK6');//f
+    if (0) console.log('OK7');//f
+    if ([1, 2, 3]) console.log('OK8'); //t
+  </script>
+</body>
+
+</html>
