@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    var userin = {
+      userlist: [{
+          account: 'kim1234',
+          possword: 'kkk111',
+          username: '김철수'
+        },
+        {
+          account: 'park4321',
+          possword: 'ppp111',
+          username: '박영희'
+        },
+        {
+          account: 'hong1234',
+          possword: 'hhh111',
+          username: '홍길동'
+        },
+      ]
+    }
+    /*
+- 요구사항
+1. 사용자에게 계정을 입력받으세요.
+2. 입력된 계정이 존재하는 계정이 아니라면
+   "존재하지 않는 회원입니다"를 출력하세요.
+3. 계정이 존재한다면 비밀번호를 입력받으세요.
+4. 비밀번호가 입력한 아이디에 대응해서 일치한다면
+   "xxx님 환영합니다!"을 출력하고 반복문을 탈출하세요.
+5. 비밀번호가 다르다면 "비밀번호가 틀렸습니다" 를 출력하세요.
+6. 로그인이 성공할때까지 반복하세요.
+*/
+    var users = userin.userlist;
+
+    while (true) {
+      var a = prompt('사용자에게 아이디계정');
+      for (var user of users) {
+        var fond = null; //사용자가 입력한 아이디와 일치한 객체를
+        if (a === user.account) {
+          found = user;
+          break;
+        }
+      }
+
+      if (fond === null) {
+        alert('아이디가 존재하지않다');
+        continue;
+      }
+      var inputp = prompt('비번');
+      if (inpitp === fond.password) {
+        alert(`${fond.username}님 환영`);
+      break;
+      } else {
+        alert('비번틀림');
+      }
+
+    }
+  </script>
+
+</body>
+
+</html>

@@ -35,10 +35,41 @@ console.log(typeof dog);
 
 console.log(dog.name);
 console.log(cat.name);
+
 console.log(dog.age);
 console.log(cat.favorite[1]);
+
   dog.favorite.push('뼈다귀');
   console.log(dog);
+  console.log('--------------------------');
+
+//프로퍼티 참조 바시
+console.log(dog.kind);
+console.log(dog['kind']);
+
+//포로퍼티 값 수정
+dog.age = 5;
+cat.favorite[1] = '고등어';
+console.log(cat);
+console.log('---------------');
+//프로퍼티 동적 추가
+dog.owner = '김철수';
+console.log(dog);
+
+
+//프로포티 삭제
+delete dog.owner;
+console.log(dog);
+
+//for ~ in (es6)
+for(var key in cat){
+  console.log(`key: ${key}, value: ${cat[key]}`);
+}
+  console.log('------------');
+  //객체의 포로퍼티 키의 존재 유무(in 키워드)
+  var flag = 'owner' in cat;
+  console.log(flag);
+
   </script>
 </body>
 
