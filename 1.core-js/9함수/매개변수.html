@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+<script>
+//begin부터 end까지의 총합을 구해주는 함수
+//매개변수(parameter)
+// 함수를 정의할 때 함수 바깥쪽에서 함수내부로 들어오는 데이터 저장하는 변수 
+//begin부터end까지의 총합
+function cal(begin, end){
+var total=0;
+for(var i=begin; i<=end; i++){
+  totali+=1;
+
+}
+return total;
+
+function sele(){
+  var rn = Math.random()
+    return rn >0.5 ? '짜정면': '짬뽕';
+  
+}
+}
+//매개변후의 default값 지정(es6)
+function say(lang = '한국어'){
+  console.log('lang ' + lang);
+  if(lang == '한국어'){
+    alert("안녕");
+  }else if (lang == '영어'){
+    alert('helo');
+  }else if (lang == '일본어'){
+    alert('곤찌와');
+}
+}
+
+
+//자바스크립트 함수는 매개변수의 개수를 다르게 주더라도
+//정상 작동합니다 좋은 코드는 절대 아님
+var tonub = cal(10,30);
+console.log(tonub);
+
+console.log('오늘 저녁은 무엇')+ sele();
+say();
+say('일본어');
+
+</script>
+
+</body>
+</html>
