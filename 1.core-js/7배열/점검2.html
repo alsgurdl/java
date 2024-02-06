@@ -8,11 +8,14 @@
 </head>
 
 <body>
+
   <script>
+
     /*
     - Quiz. 
     아래 요구사항에 맞는 코드를 작성하고 
     브라우저에서 실행하여 테스트하세요.
+    
     - 요구사항
     1. kakao 변수에 배열 
     ['무지', '네오', '어피치', '라이언', '제이지']
@@ -24,44 +27,51 @@
     출력한 후 다시 삭제할 이름을 입력할 수 있도록 하세요.
     4. 모두를 정확하게 삭제할 때까지 프로그램은 계속되어야 합니다.
     */
-    var kakao = ['무지', '네오', '어피치', '라이언', '제이지'];
-// while 조건식에 kakao.length가 0이 되면 false 값을 띌수 있습니다
-    while (kakao.length) {
-      var a = prompt(`${kakao}\n삭제할 이름입력`);
-      var ind = kakao.indexOf(a);
-      if (name === -1) {
-        (`${aName}은 잘못된 이름입니다`);
-      } else {
-        kakao.splice(ind, 1);
-        alert('전부삭제완료');
-      }
 
+    var kakao = ['무지', '네오', '어피치', '라이언', '제이지'];
+
+    // while 조건식에 kakao.length를 지정해서, length가 0이 되면 false값을 띌 수 있도록. -> 반복문 종료.
+    while(kakao.length) { 
+      var delName = prompt(`현재 멤버: ${kakao}\n삭제할 이름을 입력하세요!`);
+
+      var idx = kakao.indexOf(delName); // 이름에 맞는 인덱스 탐색.
+      if(idx === -1) {
+        alert(`${delName}은(는) 잘못된 이름입니다. 다시 입력하세요.`);
+      } else {
+        kakao.splice(idx, 1);
+        alert('삭제 완료!\n남은 멤버: ' + kakao);
+      }
     }
 
+    /*
+    while(true) {
+
+      if(kakao.length === 0) {
+        alert('친구들이 다 삭제되었어요.\n프로그램을 종료합니다.');
+        break;
+      }
+
+      var delName = prompt(`현재 멤버: ${kakao}\n삭제할 이름을 입력하세요!`);
+
+      if(kakao.includes(delName)) {
+        if(confirm(`입력하신 이름: ${delName} 이(가) 맞습니까?`)) {
+          // var idx = kakao.indexOf(delName);
+          // kakao.splice(idx, 1);
+          kakao.splice(kakao.indexOf(delName), 1);
+          alert('삭제 완료!\n남은 멤버: ' + kakao);
+        }
+      } else {
+        alert(`${delName}은(는) 잘못된 이름입니다. 다시 입력하세요.`);
+        // continue; -> 굳이 쓸 필요는 없다. 왜? 이하에 더 실행할 내용이 없으므로 처음으로 돌아갑니다.
+      }
+    }
+    */
 
 
-    //     while (true) {
-    // if(kakao.length === 0){
-    //   alert('전부삭제완료');
-    //   break;
 
-    // }
 
-    //       var a = prompt(`${kakao}\n삭제할 이름입력`);
-    //       if(kakao.includes(aName)){
-    //       if(confirm(`일력하신 이름: ${a}가 맞습니까`)){
-    //         var idx = kakao.indexOf(a);
-    //         kakao.splice(idx,1);
-    //         alert(`삭제와료`+ kakao);
-
-    //       }
-    //       }else{
-    //       (`${aName}은 잘못된 이름입니다`);
-    //            //continue 굳이 쓸필요 없다 마지막내용이라 쓸필요없다
-    //       }
-
-    //     }
   </script>
+
 </body>
 
 </html>

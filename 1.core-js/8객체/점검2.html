@@ -10,60 +10,71 @@
 <body>
 
   <script>
-    var userin = {
-      userlist: [{
+    var userInfo = {
+      userList: [
+        {
           account: 'kim1234',
-          possword: 'kkk111',
+          password: 'kkk1111',
           username: '김철수'
         },
         {
           account: 'park4321',
-          possword: 'ppp111',
+          password: 'ppp4321',
           username: '박영희'
         },
         {
-          account: 'hong1234',
-          possword: 'hhh111',
+          account: 'hong9876',
+          password: 'hhh9876',
           username: '홍길동'
         },
       ]
     }
-    /*
-- 요구사항
-1. 사용자에게 계정을 입력받으세요.
-2. 입력된 계정이 존재하는 계정이 아니라면
-   "존재하지 않는 회원입니다"를 출력하세요.
-3. 계정이 존재한다면 비밀번호를 입력받으세요.
-4. 비밀번호가 입력한 아이디에 대응해서 일치한다면
-   "xxx님 환영합니다!"을 출력하고 반복문을 탈출하세요.
-5. 비밀번호가 다르다면 "비밀번호가 틀렸습니다" 를 출력하세요.
-6. 로그인이 성공할때까지 반복하세요.
-*/
-    var users = userin.userlist;
 
-    while (true) {
-      var a = prompt('사용자에게 아이디계정');
-      for (var user of users) {
-        var fond = null; //사용자가 입력한 아이디와 일치한 객체를
-        if (a === user.account) {
-          found = user;
-          break;
+    /*
+    - 요구사항
+    1. 사용자에게 계정을 입력받으세요.
+    2. 입력된 계정이 존재하는 계정이 아니라면
+      "존재하지 않는 회원입니다"를 출력하세요.
+    3. 계정이 존재한다면 비밀번호를 입력받으세요.
+    4. 비밀번호가 입력한 아이디에 대응해서 일치한다면
+      "xxx님 환영합니다!"을 출력하고 반복문을 탈출하세요.
+    5. 비밀번호가 다르다면 "비밀번호가 틀렸습니다" 를 출력하세요.
+    6. 로그인이 성공할때까지 반복하세요.
+    */
+
+    // 회원객체(userInfo) 안에 있는 회원 배열(userInfo.userList)를 따로 꺼내서 변수로 선언하면
+    // 작성 자체가 쉬워질 것입니다.
+    var users = userInfo.userList;
+
+    while(true) {
+
+      var inputAccount = prompt('아이디를 입력하세요!');
+
+      var foundUser = null; // 사용자가 입력한 아이디와 일치하는 객체를 담을 변수.
+
+      for(var user of users) {
+        if(inputAccount === user.account) {
+          foundUser = user;
+          break; // 찾았음? 그럼 더 돌릴 필요 없죠?
         }
       }
 
-      if (fond === null) {
-        alert('아이디가 존재하지않다');
+      // 위의 반복문이 끝났음에도 foundUser가 null이다? -> 일치하는 객체가 없었다.
+      if(foundUser === null) {
+        alert('아이디가 존재하지 않습니다!');
         continue;
       }
-      var inputp = prompt('비번');
-      if (inpitp === fond.password) {
-        alert(`${fond.username}님 환영`);
-      break;
-      } else {
-        alert('비번틀림');
-      }
 
+      var inputPassword = prompt('비밀번호를 입력하세요!');
+
+      if(inputPassword === foundUser.password) {
+        alert(`${foundUser.username}님 환영합니다!!!`);
+        break;
+      } else {
+        alert('비밀번호가 틀렸습니다!');
+      }
     }
+
   </script>
 
 </body>
