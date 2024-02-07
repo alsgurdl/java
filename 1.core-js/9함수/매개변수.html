@@ -15,7 +15,7 @@
 function cal(begin, end){
 var total=0;
 for(var i=begin; i<=end; i++){
-  totali+=1;
+  totali+=i;
 
 }
 return total;
@@ -29,11 +29,11 @@ function sele(){
 //매개변후의 default값 지정(es6)
 function say(lang = '한국어'){
   console.log('lang ' + lang);
-  if(lang == '한국어'){
+  if(lang === '한국어'){
     alert("안녕");
-  }else if (lang == '영어'){
+  }else if (lang === '영어'){
     alert('helo');
-  }else if (lang == '일본어'){
+  }else if (lang === '일본어'){
     alert('곤찌와');
 }
 }
