@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  const userList = [
+  {
+    account: "abc1234",
+    userName: "대길이",
+    job: "추노",
+    address: "서울",
+    hobbys: ["수영", "축구", "테니스"],
+  },
+  {
+    account: "banana",
+    userName: "빠나나",
+    job: "과일",
+    address: "서울",
+    hobbys: ["푸드파이팅", "테니스"],
+  },
+  {
+    account: "park1234",
+    userName: "주차왕",
+    job: "발렛파킹",
+    address: "경기",
+    hobbys: ["족구", "축구", "테니스", "영화감상"],
+  },
+  {
+    account: "fire",
+    userName: "불꽃남자카리스마",
+    job: "게이머",
+    address: "서울",
+    hobbys: ["독서", "테니스"],
+  },
+];
+
+
+//4명의 회원 중 취미가 딱 2개인 사람만 필터링 해 주세요
+//취미가 2개인 사람만 모아서 새 배열
+function fil() {
+  const filar = [];
+  for(let user of userList){
+    if(user.hobbys.length === 2){
+      filar.push(user);
+    }
+  }
+  return filar;
+}
+//서울 사는 사람만 새로운 폴더에 담아
+function eru(){
+  const filar = [];
+  for(let user of userList){
+    if(user.address === '서울'){
+      filar.push(user);
+    }
+  }
+  return filar
+}
+
+
+////////////////////////////////////////////////////////////////////////
+
+//콜백을 이용한 필터링 함수
+function fil(cond){
+  const filar = [];
+  for(let user of userList){
+    if(cond(user)){
+      filar.push(user);
+    }
+  }
+  return filar
+}
+//취미가 3개 이상인 사람만 필터링
+const re = fil(user => user.hobbys.length >=3);
+//주소가 서울 이면서 직업이게이머
+const re1 = fil(user => user.address === '서울' && user.job ==='게이머');
+console.log(re);
+console.log(re1);
+
+//회원 정보중 이름 배열
+
+  </script>
+</body>
+</html>
