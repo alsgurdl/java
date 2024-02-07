@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //var z ='hellp' 전역변수
+//즉시 실행 함수(정의와 동시에 실행)
+(function(x,y){
+  console.log(`x+y: ${x+y}`);
+})(60,70);
+//재귀 함수
+//함수 내에서 자기 자신을 다시 호출하여 작업을 수앵하는 함수
+//종료 조건을 직접 작성해 주셔야 합니다
+console.log('=========================');
+function count(n){
+  if(n < 0)return;
+ console.log(n);
+ count(n-1);
+}
+cont(5);
+
+console.log('=========================');
+function fac(n){
+  if(n ===1)return 1;
+  return n * fac(n-1);
+}
+
+console.log(`6!: ${fac(6)}`);
+
+//중첩 함수안에 함수
+console.log('=========================');
+function out() {
+
+  var x = 1; // outer 함수 내에서만 사용 가능한 지역 변수
+
+  //헬퍼함수
+  function inner() {
+    var y = 2;// inner 함수내에서만 사용 가능
+    console.log(`x + y = ${x + y}`);
+  }
+  inner();
+}
+out();
+
+//console.log(x); log(x)함수내에서만 가능
+//inn(); -> out함수 내에 선언된 함수 out을 호출하지 않으면 애초에 존재하지 않는 함수
+//
+  </script>
+</body>
+</html>
