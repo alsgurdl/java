@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+  Q. n개의 정수를 전달하면 해당 정수들의 총합과 평균을 
+     반환하는 함수 calcNumbersTotalAndAverage를 작성하세요.
+*/
+function calcNumbersTotalAndAverage(...nub) {
+  var to = 0;
+  for(var n of nub){
+    to += n;
+  }
+  var avg = to / nub.length;
+
+  //프로포티의 키를 생략하면 변수명이 키가 됩니다.
+  return {
+    to: to,
+    avg: avg
+  };
+}
+var re = calcNumbersTotalAndAverage(90,80,100,90);
+console.log(`총합:${re.to},평균${re.avg}`);
+  </script>
+</body>
+</html>

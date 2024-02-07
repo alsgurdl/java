@@ -16,9 +16,20 @@ Q. n의 약수의 개수를 구하기
  나누어 떨어졌을 시 약수의 개수 카운트를 1증가시키고 출력.
 약수들은 배열에 담사서 한번에 출력
  */
-function calcDivisor(n){
-  
-}
+
+    function cal(nub) {
+      var dis = [];
+      var cou = 0;
+      for (var i=1; i<=nub; i++){
+        if(nub % i ===0){
+          dis.push(i);
+        }
+      }
+      console.log(`${nub}의 약수 ${dis}`);
+      return dis.length;
+    }
+    var div = cal(10);
+    console.log(`약수의 개수: ${div}` );
 
 </script>
 
