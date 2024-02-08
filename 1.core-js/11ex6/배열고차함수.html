@@ -130,15 +130,15 @@ appleBasket
 // xxx회원님의 2번째 취미는 xxx입니다. 를 반복해서 출력
 console.log('===================================');
 userList
-.fillter(user=> user.address ==='서울' )
+.filter(user=> user.address === '서울' )
 .map(user => {
   return{
   name: user.userName,
-  secpnd: user.hobbys[1]
+  secondHobby: user.hobbys[1]
   }
 })
 
-.forEach(b= console.log(`${b.name}dlau ${b.secpnd}`));
+.forEach(b=> console.log(`${b.name}dlau ${b.secondHobby}`));
 
 
 
