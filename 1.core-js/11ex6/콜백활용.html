@@ -82,6 +82,22 @@ console.log(re);
 console.log(re1);
 
 //회원 정보중 이름 배열
+//매핑
+function map(callback) {
+  const mappa = [];
+for(let user of userList){
+   mappa.push(cal(user));
+}
+
+
+  return mappa;
+}
+const name = map(user => user.userName);
+console.log(name);
+
+const addl = map(user=> user.address); 
+console.log(addl);
+
 
   </script>
 </body>
