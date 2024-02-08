@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="fru">
+    <li class="fr ap">사과</li>
+    <li class="fr ba">바나나</li>
+    <li class="fr gr">포도</li>
+    <li class="fr pe">복숭아</li> 
+  </ul>
+<script>
+//const $gr = document.querySelector('.gr');
+//const $gr = document.querySelector('.#fru li:nth-child(3)');
+const $gr = document.querySelector('.ba + li');
+console.log($gr);
+
+$gr.textContent = '맛있는';
+// quersl는 발견된 첫번째 태그만 가져옴
+const $fr = document.querySelector('.fr');
+console.log($fr);
+//querySelectorAll이 가져오는 데이터 묶음은
+//배열이 아닌 유사배열이브로, 배열을 사용하기 힘들다
+// 그래서 유사배열을 실제 배열로 바꿔서 쓰는 것이 좋습니다.
+const $frAll = document.querySelectorAll('.fr');
+console.log($frAll);
+
+//$frAll.splice
+//유사배열을 순수한 배열로 변경하기
+const $fru = [...$frAll];
+$fru.pop().textContent='오우';
+//요소를 한번에 여러개 취득하는 기타 메서드들도 유사배열대로 요소가 리턴
+//배열로 변경해서 사용하세요
+const $frat = document.getElementsByTagName('li');
+console.log($frat);
+
+const $frb = document.getElementsByClassName('fr');
+console.log($frb);
+
+for(let $f of $fru){
+  $f.style.border='1px dashed tomato';
+  $f.style.margin='10px';
+}
+</script>
+
+</body>
+</html>

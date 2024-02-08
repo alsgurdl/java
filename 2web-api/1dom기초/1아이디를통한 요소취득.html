@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li id="ap" style="background: red;">사과</li>
+    <li id="ba">바나나</li>
+    <li id="gr">포도</li>
+    <li id="pe">복숭아</li>
+    
+  </ul>
+<script>
+const nub = 20;
+//관례적으로 노드 변수이름 앞에 $기호를 붙입니다
+const $ban = document.getElementById('ba');
+console.log($ban);
+
+$ban.textContent = '뻐네이너';
+$ban.attributes.id.value = 'bnn';
+
+const $ap = document.getElementById('ap');
+$ap.style.background = 'orange';
+</script>
+
+
+
+</body>
+</html>
