@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+const emp= {
+  em: '뽀로',
+  age: 4,
+  hir: '2021-01-01',
+  bir: '2020-02-08'
+};
+const {em,bir,age} = emp;
+console.log(`이름${em}이고 나이${age} 생일${bir}`);
+const {em: en,bir: bd,age:a} = emp;
+console.log(`이름${en}이고 나이${a} 생일${bd}`);
+console.log('--------------------------------------');
+ const {vir: dday,...ot} = emp;
+ console.log(ot);
+console.log('-----------------------------');
+const cemp = {
+  ...emp,
+  address: '마포',
+  hob: ['산책','tndud'],
+  age: 17
+};
+console.log(cemp);
+console.log(emp);
+
+
+  </script>
+</body>
+</html>
