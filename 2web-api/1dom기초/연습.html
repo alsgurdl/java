@@ -43,7 +43,9 @@
 
         //7. id="list1"인 요소에 <li> 요소중  3번째 이후요소만 선택후
         //   border 2px dashed violet 적용 (3번째부터 끝까지 선택)
-     
+        const $first = document.querySelectorAll('#list li:last-child');
+        $first.forEach($li => $li.style.background = 'gray');
+
    
         
       
