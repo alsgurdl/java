@@ -6,19 +6,20 @@
   <title>Document</title>
 </head>
 <body>
+
+  <div id="greeting">Hello<span>World!</span></div>
   
-  <div id="gre">hello <span>world</span></div>
+  <script>
 
+    const $div = document.getElementById('greeting');
+    // console.log($div.childNodes[0].nodeValue);
+    console.log($div.textContent);
 
-<script>
-const $div = document.getElementById('gre');
-//console.log($div.childNodes[0].nodeValue);
-console.log($div.textContent);
-//textcontent는 마크업을 제외한 텍스트 전테를 지목
-//텟그트 형식으로 태그를 작성해도 모듀 텍스트로 인식
-$div.textContent = '안녕하세여';
+    // textContent는 마크업을 제외한 텍스트 전체를 지목.
+    // 텍스트 형식으로 태그를 작성해도 모두 텍스트로 인식합니다.
+    $div.textContent = '안녕하세요!';
 
-</script>
+  </script>
 
 
 </body>
