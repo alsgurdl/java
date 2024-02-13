@@ -11,6 +11,8 @@
   <script>
 const $btn = document.getElementById('btn');
 
+const hel = () => alert('안녕하');
+
 //addEventListener('이벤트 타입',핸들러->콜백)
 $btn.addEventListener('click',function(){
   alert('안녕하세요');
@@ -18,7 +20,9 @@ $btn.addEventListener('click',function(){
 $btn.addEventListener('click',()=>{
   alert('hihi');
 });
-
+$btn.addEventListener('click',hel);
+// 핸즐러 제거: 이름이 있는 핸들러만 제거 가능
+$btn.removeEventListener('click',hel);
   </script>
   
 </body>
