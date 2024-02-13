@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="wrap">
+    <ul id="fru">
+      <li class="app">appl</li>
+      <li class="ban">ban</li>
+      <li class="gra">gra</li>
+    </ul>
+  </div>
+
+  <table id="bor">
+    <tr>
+      <td>A</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <td>C</td>
+      <td>D</td>
+    </tr>
+  </table>
+
+
+  <script>
+const $ban = document.querySelector('.ban');
+
+// 부모 노드 탐색
+const $par = $ban.parentNode;
+console.log($par);
+const $div = $ban.parentNode.parentNode;
+console.log($div);
+
+//이전 형제 노드 탐색
+const $prev = $ban.previousElementSibling;
+console.log($prev);
+
+const $next = $ban.nextElementSibling;
+console.log($next);
+
+//더시상 지목할 혀제가 없을시 null이 온다
+const $next2 = $next.nextElementSibling;
+console.log($next2);
+
+//table 태그는 자식태그로 tbody를 자동으로 삽입
+const $bord = document.getElementById('bor');
+
+const $tbody = $bord.children[0];
+console.log($tbody.children);
+
+
+
+
+
+  </script>
+
+
+</body>
+</html>

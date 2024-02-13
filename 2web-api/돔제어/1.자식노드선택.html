@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+<ul id="fru">
+  <li class="app">appl</li>
+  <li class="ban">ban</li>
+  <li class="gra">gra</li>
+</ul>
+<div id="test">
+
+</div>
+
+<script>
+//노드 탁색의 기점이 괴는 ul 요소 취득
+const $fru = document.getElementById('fru');
+
+//기준 노드의 모든 자식 노드를 탐색(텍스트 노드 탐색)
+const $chil = $fru.childNodes; //공백을 텍스트로 인식해서 모두 탐색
+console.log($chil);
+
+//기준 노드의 모든 자식 노드를 탐색(텍스트 노드 제외)
+const $child = $fru.children;
+console.log($child); // 유사배열객체로 리턴
+
+//기준 노드의 첫번째 자식 노드를 탐색
+const $firs = $fru.firstChild;
+console.log('first cild'+$firs); //firstchild는 텍스트 노드가 나올 가능성 있음
+console.log('first-elment- child' + $firs.firstElementChild);
+console.log('last-elment- child' + $firs.lastElementChild);
+
+// 기존 노드에 자식노드가 있는지의 여부 확인
+//텍스트 노드가 있을 시에는 true가
+const $test = document.getElementById('test');
+console.log($test.hasChildNodes());
+
+//텍스트 노드를 제외한 요소노드의 존재 여부 확인
+console.log(!!$fru.children.length);
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <ul id="fru">
+    <li>app</li>
+    <li>bana</li>
+    <li>gra</li>
+  </ul>
+
+
+  <script>
+const $fru = document.getElementById('fru');
+/*
+ const $children = $fruits.children;
+ const $apple = $children[0];
+ const $banana = $children[1];
+ const $grape = $children[2];
+ */
+
+ //배열 destructuring
+ const [$app,$ban,$gra] = [...$fru.children];//children은 유사배열이니까 순수 배열로 변경
+const $man = document.createElement('li');
+$man.textContent = 'mango';
+//요소 추가
+$fru.appendChild($man);
+//이미 활성화된 요소를 appendchild 하면 맨마지막으로 이동.
+
+
+$fru.appendChild($ban);
+//insertbefore도 마찬가지로 기존 요소를 이동시킬수있다.
+$fru.insertBefore($app,$man);
+
+
+//gre를 맨 마지막 노드 바로 앞으로 이동
+//$fru.insertBefore($gra,$ban); 같은값
+$fru.insertBefore($gra,$fru.lastElementChild);
+
+  </script>
+</body>
+</html>
