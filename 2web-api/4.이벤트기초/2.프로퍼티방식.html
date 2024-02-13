@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button type="button" id="btn" >클릭하세요</button>
+  <button type="button" id="btn2" >올려</button>
+  <button type="button" id="btn3" >치워</button>
+
+
+<script>
+//이벤트 핸들러 정의
+// function hel(){
+//   alert('hel');
+// }
+
+const $btn = document.getElementById('btn');
+const $btn2 = document.getElementById('btn2');
+const $btn3 = document.getElementById('btn3');
+
+//$btn.onclick = hel;
+$btn.onclick = function(){
+  alert('hihi');
+
+}
+$btn.onclick = function(){
+  alert('nono');
+
+}
+
+$btn2.onpointermove = function(){
+  alert('all');
+}
+$btn3.onmouseout = ()=>alert('치웠다');
+
+//핸들러 제거
+$btn3.onmouseout = null;
+</script>
+
+  
+</body>
+</html>
