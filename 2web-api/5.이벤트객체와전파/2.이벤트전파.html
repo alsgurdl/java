@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+#fru{
+  padding: 50px;
+  border: 2px solid red;
+}
+#fru > li{
+  background: yellow;
+  margin-bottom: 10px;
+}
+  </style>
+</head>
+<body>
+  <ul id="fru">
+    <li>app</li>
+    <li>ban</li>
+    <li>gra</li>
+  </ul>
+
+<script>
+const $fru = document.getElementById('fru');
+
+$fru.addEventListener('click', e => {
+  //console.log('ul에 이벤트 발생');
+ // alert('요소클릭');
+ //console.log('이벤트 핸들러가 붙은 타겟'+ e.currentTarget);
+// console.log('실제 이벤트 발생'+ e.target);
+if(e.target === e.currentTarget){
+  //이벤트가 발생한 곳과 이벤트가 등록된곳이 같다면 이벤트 강제종료
+  //이벤트가 등록된 곳: ul->발생된 곳도ul이라면 이벤트가 계속될 의미가 없다
+  return;
+}
+alert('요소클릭');
+});
+
+
+</script>
+
+</body>
+</html>

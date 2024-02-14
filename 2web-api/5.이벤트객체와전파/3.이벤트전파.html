@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+#fru{
+  list-style: none;
+  padding: 0;
+
+}
+#fru li{
+  width: 100ps;
+  cursor: pointer;
+}
+#fru .act{
+  color: red;
+  text-decoration: underline;
+}
+
+  </style>
+</head>
+<body>
+  <ul id="fru">
+    <li id="app" class="act">App</li>
+    <li id="ban">ban</li>
+    <li id="gra">gra</li>
+  </ul>
+
+<div>선택된 과일: <em class="msg">apple</em></div>
+
+<br>
+# 새로운 과일 추가한다
+<input type="text" class="te">
+<button id="add">추가</button>
+<script>
+const $fru = document.getElementById('fru');
+const $msg = document.querySelector('.msg');
+const $li = [...$fru.children];//모든 li요소를 배열에 담기
+
+//이벤트 핸들러
+//이벤트 핸들러 -> ul에 클릭이 발생하면 호출
+function actv(e){
+
+
+//이벤트 발생 타갯이 특정 요소인지를 검증
+if(!e.target.matches('#fru > li')){
+  console.log('발생하면안돼');
+return;
+}
+//active 클래스를  클릭되 요소 추가
+//기존에 active를 가지고 있던 요소를 클래스를 삭제
+//for(let $la of $li){
+  //$la.classList.toggle('act',$la === e.target){
+    /*
+    toggle 메서드의 두번째 매개값으로 논리값을 전달할 수 있는데
+    해당 논리값이 true 판명나면
+    지정한 클래스를 추가
+    flase로 판명나면 지정한 클래스삭제
+    */
+ /// }
+//}
+/*
+선택된 과일 이름을 em .msg에 작성해야 한다
+선택된 과일 li에 클래스 를 추가한다
+동시에 기존에 있던 li의 act를 지워야 한다
+*/
+//em.msg에 이벤트가 발생된 과일 이름 추가
+$msg.textContent = e.target.id;
+}
+
+// ul에 이벤트 등록
+$fru.addEventListener('click', actv);
+
+//동적으로 과일 추가
+const $btn = document.getElementById('add');
+const $text = document.querySelector('.te');
+//추가 버튼에 이벤트 등록
+$btn.addEventListener('click', e=>{
+const $new = document.createElement('li');//<li>
+$new.textContent = $text.value;
+$new.setAttribute('id', $text.value.toLowerCase());//
+$fru.appendChild($new);//ul에 새로만든 li추가
+$text.value= '';//다음 입력을 위해 비우기
+
+//새롭게 추가 된 li에도 active 추가 대상 여부를 확인하기 위해 배열 추가
+$li.push($new);
+});
+//입력창 안에서 엩터키를 입력하면 버튼 클릭 효과의 동일한 효과 내기
+$text.addEventListener('keydown', e => {
+if(e.keyCode === 13){
+  //click()은 요소를 직접 클릭한 것과 같은 효과
+  $btn.click();
+}
+});
+
+
+
+
+
+</script>
+
+</body>
+</html>

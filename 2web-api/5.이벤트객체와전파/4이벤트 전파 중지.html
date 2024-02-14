@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .root {
+        width: 500px;
+        height: 500px;
+        background: red;
+    }
+
+    .par {
+        width: 50%;
+        height: 50%;
+        background: orange;
+    }
+
+    .ch {
+        width: 50%;
+        height: 50%;
+        background: skyblue;
+    }
+</style>
+</head>
+
+<body>
+
+  <a href="https://www.naver.com">네이버이동</a>
+  <br>
+  <div class="root">
+    <div class="par">
+      <div class="ch"></div>
+    </div>
+  </div>
+  <script>
+  document.querySelector('.root').addEventListener('click', e =>{
+    alert('root');
+  });
+  document.querySelector('.par').addEventListener('click', e =>{
+    alert('par');
+  });
+  document.querySelector('.ch').addEventListener('click', e =>{
+    alert('ch');
+    e.stopPropagation(); //이벤트 전파를 막는 메서드
+  });
+
+
+
+
+
+    const $link = document.querySelector('a');
+    $link.addEventListener('click', e => {
+      if (!confirm('정말이동?')) { //사용자가취소 를 눌렸다면
+        //return; -> a의 고유 기능을 막을 수 없음
+        e.preventDefault(); //태그의 고유 기능을막음 (from submit에도 많이 사용)
+      }
+    });
+  </script>
+
+</body>
+
+</html>
