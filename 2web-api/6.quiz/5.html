@@ -48,7 +48,7 @@ $name.style.display = 'none';
 });
 const $btn2 = document.querySelector('.btn2');
 const $todo = document.querySelector('.todo-input');
-const $ul = document.querySelector('todo-list');
+const $ul = document.querySelector('.todo-list');
 function cre(){
   if($todo.value === ''){
   alert('할일입력');
@@ -81,7 +81,7 @@ $btn2.addEventListener('click',cre);
 
 //생성된 이후 ul 앞에서 삭제 버튼 클릭 시 이벤트 발생(이벤트전)
 $ul.addEventListener('click',e=>{
-if(!e.target.matches('.todo > li > button')){
+if(!e.target.matches('.todo-list > li > button')){
   return;
 }
 $ul.removeChild(e.target.parentNode);
