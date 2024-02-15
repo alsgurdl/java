@@ -6,46 +6,48 @@
   <title>Document</title>
 </head>
 <body>
-<button id="btn">네이버로 이동</button>
 
-<script>
+  <button id="btn">네이버로 이동!</button>
 
-const $btn = document.getElementById('btn');
-$btn.onclick = () => {
-  //location 객체는 현재 활성화 된 웹 페이지의 url 정보를 포함하는 window객체의 프로퍼터
- console.log(location);
-//location.href 전체 url이 포함된 문자열 이게 변경된다면 변경된 새로운 페이지로 이동
- //location.href = 'https://www.naver.com'
+  <script>
 
- //새로고침 함수:reload()
- //location.reload();
-//뒤로가기 기능 사용할수 없다
- //replace('url'): 현재 리소스를 대체하는 새로운 url로 이동
- location.replace('https://www.naver.com');
-}
+    const $btn = document.getElementById('btn');
 
-//성공시 실행할 콜백 함수
-function su(pos){
-console.log(pos);
-console.log('위도: ' + pos.coords.latitude);
-console.log('경도: ' + pos.coords.longitude);
-}
+    $btn.onclick = () => {
+      // location 객체는 현재 활성화 된 웹 페이지의 URL 정보를 포함하는 window객체의 프로퍼티
+      console.log(location);
 
-function fa(err){
-alert('위치 정보를 얻는 데 실패');
-console.log(err);
-}
+      // location.href: 전체 URL이 포함된 문자열. 이게 변경된다면 변경된 새로운 페이지로 이동합니다.
+      // location.href = 'https://www.naver.com';
+
+      // 새로고침 함수: reload()
+      // location.reload();
+
+      // replace('URL'): 현재 리소스를 대체하는 새로운 URL로 이동합니다.
+      // 뒤로가기 기능을 사용할 수 없습니다.
+      location.replace('https://www.naver.com');
+    }
 
 
-(function(){
+    // 성공 시 실행할 콜백 함수
+    function success(position) {
+      console.log(position);
+      console.log('위도: ' + position.coords.latitude);
+      console.log('경도: ' + position.coords.longitude);
+    }
 
-//getCurrentPosition(워치저보 승인시 실행할 함수, 실패시 실행할 함수);
-navigator.geolocation.getCurrentPosition(su,fa); 
-})();
+    // 실패 시 실행할 콜백 함수
+    function fail(error) {
+      alert('위치정보를 얻는 데 실패했습니다. 위치 정보를 승인해 주세요!');
+      console.log(error);
+    }
 
-</script>
+    (function() {
+      // getCurrentPosition(위치 정보 승인시 실행할 함수, 실패했을 시 실행할 함수);
+      navigator.geolocation.getCurrentPosition(success, fail);
+    })();
 
-
+  </script>
   
 </body>
 </html>
