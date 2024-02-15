@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+const date = new Date();//오늘 날짜 정보르 가진 객체
+console.log(date.getTime());// 날짜를 밀리초단위
+const mil = 157373503000;
+const day = new Date(mil);
+console.log(day);
+console.log(date.getFullYear());
+console.log(date.getMonth());
+console.log(date.getDate());
+console.log(date.getHours());
+console.log(date.getMinutes());
+console.log(date.getSeconds());
+  console.log(date.getDay());
+  console.log('-----------------------------------');
+  //오늘 날짜 특정 날짜(밀리초)
+  const gap = date.getTime() - mil;
+  console.log(gap);
+  let time;
+  if(gap < 60 * 60 * 24 *1000){//1일 전
+if(gap < 60 * 60 *1000){
+  time = '방금전';
+}else {
+  time = gap / (60 * 60 *1000)+ '시잔전';
+}
+  }else {//1일 이상 넘어간시간
+  const che = new Date(gap);
+  const cal = che.getFullYear() -1970;
+  if(cal > 0){
+    time = cal + '년 전';
+
+  }else { `${che.getMonth()+1}개월전`;}
+  }
+
+  console.log(`지정괸 날짜는 오늘부터${time}`);
+  </script>
+
+</body>
+</html>

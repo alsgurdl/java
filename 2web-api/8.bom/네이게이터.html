@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<button id="btn">네이버로 이동</button>
+
+<script>
+
+const $btn = document.getElementById('btn');
+$btn.onclick = () => {
+  //location 객체는 현재 활성화 된 웹 페이지의 url 정보를 포함하는 window객체의 프로퍼터
+ console.log(location);
+//location.href 전체 url이 포함된 문자열 이게 변경된다면 변경된 새로운 페이지로 이동
+ //location.href = 'https://www.naver.com'
+
+ //새로고침 함수:reload()
+ //location.reload();
+//뒤로가기 기능 사용할수 없다
+ //replace('url'): 현재 리소스를 대체하는 새로운 url로 이동
+ location.replace('https://www.naver.com');
+}
+
+//성공시 실행할 콜백 함수
+function su(pos){
+console.log(pos);
+console.log('위도: ' + pos.coords.latitude);
+console.log('경도: ' + pos.coords.longitude);
+}
+
+function fa(err){
+alert('위치 정보를 얻는 데 실패');
+console.log(err);
+}
+
+
+(function(){
+
+//getCurrentPosition(워치저보 승인시 실행할 함수, 실패시 실행할 함수);
+navigator.geolocation.getCurrentPosition(su,fa); 
+})();
+
+</script>
+
+
+  
+</body>
+</html>

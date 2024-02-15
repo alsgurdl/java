@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<h3>5초뒤 경고창이 풀력 이 버튼을 누르면 실행되지않습니다</h3>
+  <button class="stop">취소</button>
+  
+  <script>
+    const fun = setTimeout(() => {
+      alert('5초후');
+    }, 5000);
+    document.querySelector('.stop').onclick= ()=>{
+      clearTimeout(fun);
+    }
+  </script>
+  
+</body>
+</html>
