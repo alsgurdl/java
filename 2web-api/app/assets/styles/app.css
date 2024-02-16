@@ -1,24 +1,26 @@
+
 * {
   box-sizing: border-box;
 }
 
 html {
-font-family: 'Roboto', open-sans;
+  font-family: 'Roboto', open-sans;
 }
 
-body{
+body {
   margin: 0;
 }
-header{
+
+header {
   background: #023d6d;
-  color: #ffff;
+  color: #fff;
   padding: 1rem;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   width: 100%;
-
 }
-.card{
+
+.card {
   margin: 2rem auto;
   width: 40rem;
   max-width: 90%;
@@ -27,21 +29,24 @@ header{
   padding: 1rem;
   color: #023d6d;
 }
-#cal input{
+
+#calculator input {
   font: inherit;
   font-size: 3rem;
   border: 2px solid #023d6d;
   width: 10rem;
-  margin: auto;
   display: block;
+  margin: auto;
   padding: 0.15rem;
   color: #023d6d;
   text-align: center;
 }
-#cal input:focus{
+
+#calculator input:focus {
   outline: none;
 }
-#cal button{
+
+#calculator button {
   font: inherit;
   background: #023d6d;
   color: #fff;
@@ -49,32 +54,38 @@ header{
   padding: 1rem;
   cursor: pointer;
 }
-#cal button:focus{
+
+#calculator button:focus {
   outline: none;
 }
 
-#cal button:hover,
-#cal button:active{
-background: #084f88;
-border-color: #084f88;
+#calculator button:hover,
+#calculator button:active {
+  background: #084f88;
+  border-color: #084f88;
 }
-#calc-actions button{
+
+#calc-actions button {
   width: 4rem;
 }
-#calc-actions{
+
+#calc-actions {
   margin-top: 1rem;
   text-align: center;
 }
-#res{
+
+#results {
   text-align: center;
 }
-#logs{
+
+#logs {
   min-height: 10rem;
   max-height: 15rem;
   padding: 2rem 5rem;
   overflow: auto;
 }
-.log-ent{
+
+.log-entries {
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -85,11 +96,11 @@ border-color: #084f88;
   font-weight: 700;
   color: rgb(237, 78, 78);
 }
-.log-ent .log-ents-i{
+
+.log-entries .log-entries-item {
   width: 50%;
   border-radius: 10px;
   box-shadow: 2px 2px 2px #ccc;
   padding: 0.75rem;
-margin-bottom: 0.6rem;
+  margin-bottom: 0.6rem;
 }
-
