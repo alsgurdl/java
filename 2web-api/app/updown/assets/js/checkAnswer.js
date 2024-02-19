@@ -56,10 +56,11 @@ function caseDown($icon) {
 function correctAnswer($icon) {
   
   // 1. #finish 박스에 class 'show' 부여
-
+const $finish = document.getElementById('finish');
+$finish.classList.add('show');
   // 2. #numbers 클릭 이벤트 해제
-  $numbers.onclick = null;
-
+ document.getElementById('numbers').onclick = null;
+$icon.setAttribute('id','move');
   // 3. 사용자가 선택한 아이콘에 id 'move' 추가
 
 }
